@@ -1,0 +1,34 @@
+name: grex 
+adopt-info: grex
+summary: easily create regx from input.
+description: |
+    grex is a library as well as a command-line utility that is meant to simplify the often complicated and tedious task of creating regular expressions. It does so by automatically generating a single regular expression from user-provided test cases. The resulting expression is guaranteed to match the test cases which it was generated from.
+
+
+base: core20
+grade: stable 
+confinement: strict
+license: MIT
+
+
+architectures:
+- build-on: amd64
+
+
+apps:
+  grex:
+    command: bin/grex
+    plugs:
+      - home
+      - removable-media
+
+parts: 
+  grex:
+    source: https://github.com/pemistahl/grex
+    source-type: git
+    plugin: rust
+    
+    override-pull: |
+      snapcraftctl pull
+      snapcraftctl set-version "$(git describe --tags `git rev-list --tags --max-count=1`)"
+
