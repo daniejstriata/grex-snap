@@ -1,3 +1,5 @@
 # grex-snap
 
 grex is a library as well as a command-line utility that is meant to simplify the often complicated and tedious task of creating regular expressions. It does so by automatically generating a single regular expression from user-provided test cases. The resulting expression is guaranteed to match the test cases which it was generated from.
+
+https://github.com/pemistahl/grex
