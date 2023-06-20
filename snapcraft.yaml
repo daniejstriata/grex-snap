@@ -8,12 +8,15 @@ description: |
 base: core20
 grade: stable 
 confinement: strict
-license: MIT
+license: Apache
 
 
 architectures:
-  - amd64
-  - arm64
+  - build-on: amd64
+    build-for: amd64
+  - build-on: arm64
+    build-for: arm64
+
 
 apps:
   grex:
@@ -21,6 +24,7 @@ apps:
     plugs:
       - home
       - removable-media
+
 
 parts: 
   grex:
@@ -31,4 +35,3 @@ parts:
     override-pull: |
       snapcraftctl pull
       snapcraftctl set-version "$(git describe --tags `git rev-list --tags --max-count=1`)"
-
