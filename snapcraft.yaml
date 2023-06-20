@@ -8,11 +8,12 @@ description: |
 base: core20
 grade: stable 
 confinement: strict
-license: Apache
+license: Apache-2.0
 
 
 architectures:
   - amd64
+  - arm64
 
 
 apps:
