@@ -12,7 +12,7 @@ license: Apache
 
 
 architectures:
-  - amd64
+  - build-on: amd64
 
 
 apps:
